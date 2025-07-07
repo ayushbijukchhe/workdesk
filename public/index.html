@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>workdesk</title>
+    <style>
+
+        a{ 
+            margin-left:20px;
+        } 
+
+        .navbar-nav .nav-item .nav-link, .dropdown-menu .dropdown-item {
+          /* color: #00268b; */
+          color: #002189;
+          /* color: #f29d35; */
+        }
+      
+        /* Add specific rules for the footer social media links */
+        footer .social .navbar-nav .nav-item .nav-link {
+          color: white; 
+        }
+
+        footer .social .navbar-nav .nav-item .nav-link:hover {
+          color: #f29d35; /* Optional: A hover effect for social media icons */
+        }
+      /* Ensure the carousel inner container uses proper sliding */
+      .carousel-inner {
+        position: relative;
+        width: 100%;
+        display: flex; /* Make sure items are in a row, allowing proper sliding */
+        flex-direction: row; /* Align carousel items horizontally */
+        /* overflow: hidden; Ensure content doesn’t overflow on small screens */
+      }
+
+
+      /* Set dynamic height for different screen sizes */
+      @media (max-width: 767px) {
+        .carousel-inner {
+          height: 50vh; /* Set height for small screens */
+        }
+
+        #content-area.with-carousel {
+          padding-top: 160px;
+        }
+
+        #content-area {
+          padding-top: 290px; /* Increased padding for screens smaller than 768px */
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1199px) {
+        .carousel-inner {
+          height: 70vh; /* Set height for medium screens */
+        }
+
+        #content-area {
+          padding-top: 290px;
+        }
+
+        #content-area.with-carousel {
+          padding-top: 160px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .carousel-inner {
+          height: 80vh; /* Set height for large screens */
+        }
+
+        #content-area {
+          padding-top: 160px;
+        }
+      }
+
+
+      /* Apply consistent sizing to video and images */
+      .custom-height {
+        /* object-fit: cover; */
+        width: 100%; /* Take the full width of the container */
+        height: auto; /* Fill the entire container height */
+        /* object-position: center; */
+      }
+
+      .custom-height-image{
+        width: 100%; /* Make the image take up the full width of its container */
+        height: auto; /* Maintain the aspect ratio */
+        max-height: 400px; /* Set a maximum height for the images */
+        object-fit: cover; /* Ensure the image covers the container without stretching */
+      }
+
+      /* Each carousel item takes full width and height of the carousel */
+      .carousel-item {
+        min-width: 100%; /* Each item takes the full width */
+        height: 100%; /* Ensure items fill the carousel height */
+      }
+
+      
+    .valuable-clients{
+      background-color:ghostwhite; 
+      padding: 20px; 
+     }
+
+      .client-logo{
+        max-height: 100px; 
+        max-width: 50%; 
+        margin: 10px 0; 
+      }
+      /* Ensure dropdown (projects) shows on hover */
+    /* .dropdown:hover .dropdown-menu {
+      display: block;
+      border:none;
+      box-shadow: none; 
+    } */
+    .styled-text{
+      
+      margin-bottom: 20px;
+      font-family: 'Lato', sans-serif;
+      background-color: #ffffff; /* White background */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      font-size: 1.1rem; /* Slightly larger text */
+      line-height: 2; /* Increase line spacing */
+
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 800px; /* Adjust this width to fit your layout */
+      padding-left: 5px; /* Add left padding */
+      padding-right: 5px; /* Add right padding */
+
+      
+    }
+
+    .extra-spacing {
+    margin-top: 10vh; 
+    margin-left: 5vh;
+    margin-right: 5vh;
+  }
+  .heading{
+    color:#00268b;
+    text-align: center;
+  }
+
+  .custom-navbar {
+    background-color:  #FFFFFF; 
+    filter: brightness(110%); 
+}
+
+
+        
+        
+</style>
+  
+
+</head>
+<body>
+      
+    <header class="fixed-top">
+        
+      <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+        <div class="container-fluid">
+           
+          <img src="images/logo.jpeg" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">     
+            
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- div for nav bar and social media icons -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              
+              <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
+              </li> -->
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Projects
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="projects">
+                  <li><a class="dropdown-item" href="#" id="international-project">International Projects</a></li>
+                  <li><a class="dropdown-item" href="#" id="drone-survey">Drone Survey and 3D Mapping Projects</a></li>
+                  <li><a class="dropdown-item" href="#" id="topographic-survey">Topographic Surveying</a></li>
+                  <li><a class="dropdown-item" href="#" id="building-design">Building Design and Supervision Project</a></li>
+                  <li><a class="dropdown-item" href="#" id="road-design">Road Design and Maintainance Projects</a></li>
+                  <li><a class="dropdown-item" href="#" id="IEE">IEE /EIA Works</a></li>
+                  <li><a class="dropdown-item" href="#" id="valuation">Valuation Experiences</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="services">Our Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="team">Team Members</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="about us">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="contact us">Contact Us</a>
+              </li>
+            </ul>
+           
+           
+          </div>
+
+          
+        </div>
+        </div>
+      </nav>
+    </header>
+    
+
+   
+  <div id="content-area" class="with-carousel">
+
+          <!-- carousel starts here -->
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <video class="custom-height" autoplay muted loop>
+                <source src="images/vid3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <!-- <div class="carousel-item">
+              <img src="images/road.jpg" class="custom-height" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/design.jpg" class="custom-height" alt="Design Image">
+            </div> -->
+        </div>
+          
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      <!-- carouse ends here -->
+
+    <div class="container-fluid" style="margin-top:30px">
+      
+      <div class="row extra-spacing"> 
+        <div class="col-lg-12">
+          <!-- Welcome Message -->
+          <h2 class="text-center heading">Welcome to WorkDesk PVT.LTD.</h2>
+            <p class="styled-text">Work Desk Pvt. Ltd., formerly operating as Geo Tech Consulting
+              Services P. Ltd., is an esteemed engineering firm that was founded on
+              August 1st, 2019, and is based in Lalitpur, Nepal. <br>Our organization
+              excels in providing a wide range of advanced technical solutions and
+              engineering services that are specifically tailored to address the
+              complexities of diverse engineering projects.
+            </p>
+        </div>
+      </div>
+    
+      <div class="row extra-spacing">
+        
+        <div class="col-lg-12">
+          <h2 class="text-center heading"> Services we offer  </h2>
+          <ul class="styled-text"> 
+            <li> Topographic, Drone and DGPS Survey</li>
+            <li>Design of residential building, road and estimation</li>
+            <li>Property Valuation</li>
+            <li>IEE and EIA</li>
+            <li>Training on civil engineering softwares</li>
+            
+          </ul>
+          
+        </div>
+      </div>
+
+
+    
+      <div class="row mt-4 valuable-clients">
+        <div class="col-12">
+          <h2 class="text-center heading">Our Valuable Clients</h2>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/jica.png" class="img-fluid client-logo" alt="Client 1">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/jica.png" class="img-fluid client-logo" alt="Client 2">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/jica.png" class="img-fluid client-logo" alt="Client 3">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/jica.png" class="img-fluid client-logo" alt="Client 4">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- content ends here -->
+
+<!-- footer starts here -->
+<footer class="container-fluid footer" style="background: #1A1A1A; color: white; padding: 20px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="full_address">
+          <h5>Work Desk PVT. LTD. </h5>
+          <p> Prayag Pokhari, Lalitpur<br>
+          www.workdesk.com.np
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="contact_info">
+          <h5>Contact Us</h5>
+              <p>Phone: +977-9849126195, +977-9843502955<br>
+              Email: info.wdesk@gmail.com</p>
+        </div>
+    </div>
+
+    <div class ="col-md-4">
+      <div class="social">
+
+        
+        <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+          <!-- Phone  number -->
+          <li class="nav-item col-4 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2" href="https://wa.me/9779801882059" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
+                    <title>WhatsApp</title>
+                    <path fill="currentColor" fill-rule="evenodd" 
+                          d="M380.9 97.1C339.2 55.4 283.5 32 224 32 100.3 32 0 132.3 0 256c0 45.6 12 90.1 34.8 129.2L0 480l98.8-33.1C137.9 468 181.9 480 224 480c123.7 0 224-100.3 224-224 0-59.5-23.4-115.2-67.1-158.9zM224 432c-37.5 0-74.1-10.1-106.1-29.2l-7.6-4.5-58.6 19.6 19.6-58.6-4.5-7.6C58.1 298.1 48 261.5 48 224 48 141.6 109.6 80 192 80c37.5 0 74.1 10.1 106.1 29.2l7.6 4.5 58.6-19.6-19.6 58.6 4.5 7.6C389.9 213.9 400 250.5 400 288c0 82.4-61.6 144-144 144zm76.1-97.9c-3.3-1.7-19.4-9.6-22.4-10.7-3-1.1-5.2-1.7-7.4 1.7-2.2 3.3-8.5 10.7-10.4 12.9-1.9 2.2-3.7 2.5-7 0.8-3.3-1.7-13.9-5.1-26.5-16.3-9.8-8.7-16.3-19.4-18.2-22.7-1.9-3.3-0.2-5 1.5-6.7 1.5-1.5 3.3-3.7 4.8-5.6 1.6-1.9 2.2-3.3 3.3-5.6 1.1-2.2 0.6-4.2-0.3-5.9-0.8-1.7-7.4-17.8-10.2-24.6-2.7-6.5-5.5-5.6-7.4-5.7-1.9-0.1-4.1-0.1-6.3-0.1s-5.9 0.8-9 4.2c-3 3.3-11.8 11.5-11.8 28.1 0 16.6 12.1 32.7 13.8 35 1.7 2.2 23.9 36.5 58 51.1 34.1 14.6 34.1 9.7 40.2 9.1 6.2-0.6 19.4-7.9 22.1-15.6 2.7-7.7 2.7-14.3 1.9-15.6-0.8-1.3-3-2.1-6.3-3.8z"></path>
+                </svg>
+                <small class="ms-2">+977-9849126195</small> <!-- WhatsApp Number --> 
+            </a>
+        </li>
+
+
+        <!-- Instagram  -->
+        <li class="nav-item col-4 col-lg-auto">
+          <a class="nav-link py-2 px-0 px-lg-2" href="https://www.instagram.com/workdesk.com.np/" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
+                  <title>Instagram</title>
+                  <path fill="currentColor" fill-rule="evenodd" 
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+              </svg>
+              <small class="d-lg-none ms-2">Instagram</small>
+          </a>
+        </li>
+
+          <!-- Facebook  -->
+        <li class="nav-item col-4 col-lg-auto">
+          <a class="nav-link py-2 px-0 px-lg-2" href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
+                  <title>Facebook</title>
+                  <path fill="currentColor" fill-rule="evenodd" 
+                        d="M448 56.7v398.5c0 31.3-25.4 56.7-56.7 56.7H56.7C25.4 512 0 486.6 0 455.3V56.7C0 25.4 25.4 0 56.7 0h334.6C422.6 0 448 25.4 448 56.7zM224 448V272h-64v-64h64v-48c0-53 32-82 79-82 22.5 0 41.8 1.7 47.4 2.5v55h-32.5c-25.5 0-30.5 12.1-30.5 29.9v39.1h61l-8 64h-53v176h-64z"></path>
+              </svg>
+              <small class="d-lg-none ms-2">Facebook</small>
+          </a>
+        </li>
+      </ul>
+
+      </div>
+
+    </div>
+
+
+              
+  </div>
+</footer>
+<!-- footer ends here -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>  
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS (for carousel functionality) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- on the basis of the link clicked by the user, the content on the div content area will be changed -->
+<script>
+
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('.dropdown-menu').style.display = 'none';
+            });
+        });
+
+        document.querySelector('.dropdown').addEventListener('mouseover', () => {
+            document.querySelector('.dropdown-menu').style.display = 'block';
+        });
+
+        document.querySelector('.dropdown').addEventListener('mouseleave', () => {
+            document.querySelector('.dropdown-menu').style.display = 'none';
+        });
+
+  
+//Event listener for "international-project link"
+
+document.getElementById('international-project').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+
+      document.getElementById('content-area').innerHTML = `
+      <div class="container-fluid" style="margin-top:30px">
+
+          <div class="row">
+
+            <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+                <h2 class="heading">International Projects</h2>
+            </div>
+          </div>
+          
+         
+            
+
+          <div class="row justify-content-center"> 
+            <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+              <div class="card-body">
+                <p class="styled-text">
+                      
+                  <strong>Project Name: </strong> Hamro Paani(Baikunthe Underground Drinking Water Project)<br>
+                  <strong>Location: </strong> Madi, Chitwan <br>
+                  <strong>Client: </strong> EnviDan, Denmark  
+                      
+                </p>
+              </div>
+              <div class="card">
+                  <img src="images/in3.png" class="card-img-top custom-height-image" alt="hamro pani">
+                      
+              </div>
+              
+
+            </div>
+
+        
+                
+            <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb";>
+              <div class="card-body">
+                <p class="styled-text">
+                  <strong>Project Name: </strong> Laguna Lakeshore Road Network (LLRN) <br>
+                  <strong>Location:</strong> Manila, Philippines <br>
+                  <strong> Client:</strong> CTI Engineering International Co. Ltd. Tokyo, Japan  
+                </p>
+              </div>
+              <div class="card">
+                  <img src="images/in4.png" class="card-img-top custom-height-image" alt="hamro pani">
+                      
+              </div>
+
+              
+            </div>
+          </div>
+       </div>
+      `;
+      contentArea.classList.remove('with-carousel');
+
+  });
+
+  
+
+//Event listener for "drone-survey link"
+
+document.getElementById('drone-survey').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+
+      document.getElementById('content-area').innerHTML = `
+        <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+            <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+                <h2 class="heading">Drone Survey and 3D Mapping Projects</h2>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+               <div class="card-body">
+                  <p class="styled-text">
+                    <strong>Client:</strong>      Hotel Bodhi Red Sun <br>
+                    <strong>Location:</strong> Bhairahawa, Lumbini <br>
+                    <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+                  
+                 </p>
+               </div>
+                <div class="card">
+                    <img src="images/drone2.png" class="card-img-top custom-height-image" alt="Hotel Bodhi Red Sun">
+                  
+                </div>
+             </div>
+              
+            
+       
+           <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+            <div class="card-body">
+            
+                <p class="styled-text">
+                  <strong>Client:</strong> Gorkha Red Bricks <br>
+                  <strong>Location:</strong> Panauti Kavre <br>
+                  <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+        
+             </p>
+            </div>
+             
+            <div class="card">
+              <img src="images/drone3.png" class="card-img-top custom-height-image" alt="Gorkha Red Bricks">
+                  
+            </div>
+             
+          </div>
+        
+        
+
+          <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;" >
+              <div class="card-body">
+              
+                  <p class="styled-text">
+                    <strong>Client:</strong> Gorkha Precast<br>
+                    <strong>Location:</strong> Dekocha, Bhaktapur <br>
+                    <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+          
+                  </p>
+              </div>
+              <div class="card">
+                      <img src="images/drone4.png" class="card-img-top custom-height-image" alt="Gorkha Precast">
+                    
+                  
+              </div>
+              
+          </div>
+          
+
+        
+          <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;" >
+            <div class="card-body">
+            
+                <p class="styled-text">
+                  <strong>Client:</strong> Gorkha Eco Panel <br>
+                  <strong>Location:</strong> Jagati, Bhaktapur <br>
+                  <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+        
+                </p>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+            <div class="card-body">
+              <p class="styled-text">
+                  <strong>Client:</strong>Hotel Country Villa<br>
+                  <strong>Location:</strong> Nagarkot, Bhaktapur <br>
+                  <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+        
+             
+              </p>
+            </div>
+            
+            <div class="card">
+              <img src="images/drone5.png" class="card-img-top custom-height-image" alt="Hotel Country Villa">
+                  
+            </div>
+          </div>
+              
+
+
+          <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+            <div class="card-body">
+              <p class="styled-text">
+                  <strong>Client:</strong>Dalchwoki Resort<br>
+                  <strong>Location:</strong> test <br>
+                  <strong>Service provided:</strong>  Drone mapping, 3D modeling, Digital Elevation Model (DEM), Ortho image, and Topographic Map
+        
+             
+              </p>
+            </div>
+              
+            <div class="card">
+              <img src="images/drone6.png" class="card-img-top custom-height-image" alt="Dalchwoki Resort">
+                  
+            </div>
+              
+          </div>
+    </div>
+  </div>
+
+      `;
+      contentArea.classList.remove('with-carousel');
+
+  });
+
+  //Event listener for "topographic-survey link"
+
+document.getElementById('topographic-survey').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+
+      document.getElementById('content-area').innerHTML = `
+      <div class="container-fluid" style="margin-top:30px">
+
+          <div class="row">
+
+            <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+                <h2 class="heading">Topographic surveying</h2>
+            </div>
+          </div>
+          
+         
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+                <div class="card-body">
+                  <p class="styled-text">
+                    <strong>Project Name: </strong> A Topographic Survey of Kalika Kaligandaki Hydropower Project (38.16 MW) <br>
+                  <strong>Location: </strong> Tanahu <br>
+                    <strong>Client: </strong> Maulakalika Hydropower Company Limited
+                  </p>
+                </div>
+                <div class="card">
+                      <img src="images/ts2.png" class="card-img-top custom-height-image" alt="kalika kalikagandaki hydropower">
+                      
+                </div>
+              </div>
+
+              
+
+              <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
+                <div class="card-body">
+                  <p class="styled-text">
+                    <strong>Project Name: </strong> A Topographic Survey of Tila Hydropower Project <br>
+                  <strong>Location: </strong> test <br>
+                    <strong>Client: </strong> Tila Karnali Hydro-Electric Co. P. Ltd.
+                  </p>
+                </div>
+
+                <div class="card">
+                        <img src="images/ts5.png" class="card-img-top custom-height-image" alt="Tila">
+                        
+                </div>
+              </div>
+
+               
+            </div>
+        </div>
+      `;
+      contentArea.classList.remove('with-carousel');
+
+  });
+
+
+  //Event listener for " road-design link"
+
+document.getElementById('road-design').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+
+      document.getElementById('content-area').innerHTML = `
+      <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+
+            <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+                <h2 class="heading">Road Design and Maintenance Projects</h2>
+            </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-lg-12 extra-spacing">
+               <ul class="styled-text" style="list-style-type: none;">
+                <li> Detail Design and Estimate of<strong> Tarahari-Chapur Road,7.5 km </strong> </li>
+                <li> Detail Design and Estimate of <strong>Dopahare-Kristi-Bakrek-Badahare-Pauwai Road, 12.5 km  </strong>  </li>
+                <li>Detail Design and Estimate of <strong>Nibare-Gauridanda Road Construction Project. 25km, Okhaldhunga </strong> </li>
+                <li>Detail Design and Estimate of<strong>Dumare Khola-Sundada-Telgaha-Gufa Chaur-Gaun Dada-Sallaghari-Hulungdi Road, Tansen, Palpa </strong> </li>
+                <li>Survey, Design and Estimation of  <strong>Gorkha-Tanahu Road </strong> </li>
+                <li>Traffic, Surface Distress and Road Roughness Surveys on  <strong>National Highways (NH) </strong> 2080/81 with <strong>Soil Test (P) Ltd. </strong> </li>
+               </ul> 
+               
+              </div>
+            <div>
+              
+      <div>
+  `;
+   contentArea.classList.remove('with-carousel');
+
+  });
+
+
+  //Event listener for "valuation link"
+  document.getElementById('valuation').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+      
+    <div class="container-fluid" style="margin-top:30px; min-height: 60vh;">
+      <div class="row">
+        <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+          <h2 class="heading">Property Valuations</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 extra-spacing">
+          <ul class="styled-text" style="list-style-type: none;">
+              <li><strong>Subhakamana Saving and Credit Cooperative Ltd., </strong> Bhaktapur</li>
+              <li><strong>Chakha Saving and Credit Co-operative Ltd., </strong>Bhaktapur </li>
+              <li><strong>NIC Asia Bank Ltd. on behalf of Him Himalaya Services Pvt. Ltd.</strong> </li>
+              <li><strong>Shine Resunga Development Bank on behalf of Him Himalaya Services Pvt. Ltd.<strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+      
+      `;
+      contentArea.classList.remove('with-carousel');
+  });
+
+
+
+
+  //Event listener for "building-design link"
+
+  document.getElementById('building-design').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+        <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+            <div class="col-lg-12 text-center" style="background-color:#e9f4fb;">
+                <h2 class="heading">Bulding Design and Supervision Projects</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 extra-spacing">
+              <div class="card">
+                <img src="images/building3.png" class="card-img-top" alt="building">
+                <div class="card-body">
+                  <p class="card-text">Design of Residential Building of Mrs. Pinki Mahato at New Baneshwor</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 extra-spacing">
+              <div class="card">
+                <img src="images/building1.png" class="card-img-top" alt="building">
+                <div class="card-body">
+                  <p class="card-text"> Design and Supervision of Residential Building of Mr. Dawa Tshring Sherpa at Sallaghari, Bhaktapur</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 extra-spacing">
+              <div class="card">
+                <img src="images/building2.png" class="card-img-top" alt="building">
+                <div class="card-body">
+                  <p class="card-text">Design of residential building of Mr. Kedar Raj Pandey ar old Baneshwor, Kathmandu</p>
+                </div>
+              </div>
+            </div>
+
+    
+          </div>
+        </div>
+
+      `;
+      contentArea.classList.remove('with-carousel');
+  });
+
+
+//Event listener for "IEE link"
+
+document.getElementById('IEE').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+        <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+            <div class="col-lg-12 text-center" style="background-color: #e9f4fb;">
+              <h2 class="heading"> IEE/EIA Works </h2>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 extra-spacing" style="background-color: #e9f4fb;">
+              <div class="card-body">
+                <p class="styled-text">
+                  <strong>Project Name: </strong> Initial Environment Examination (IEE) with Detail Engineering Report (DER) for Sanitary Landfill Site <br>
+                  <strong>Location: </strong>Phidim, Panchthar, Nepal 
+                </p>
+              </div>
+            
+              <div class="card">
+                <img src="images/iee1.png" class="card-img-top custom-height" alt="IEE">
+                      
+              </div>
+            </div>
+
+            
+            
+          </div>
+
+
+      `;
+      contentArea.classList.remove('with-carousel');
+
+  });
+  
+//Event listener for "services link"
+
+  document.getElementById('services').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+        <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+            <div class="col-lg-12 text-center" style="background-color: #e9f4fb;">
+              <h2 class="heading">Our Services</h2>
+            </div>
+          </div>
+          <div class="row extra-spacing">
+            <h4 class="heading">Topographic, Drone and DGPS Survey </h4>
+            <p class="styled-text">
+             A topographical survey, sometimes known as a topo survey, is a precise, detailed, scaled representation of a place, such as a property, land area, or specified border, that displays every feature, both natural and man-made, along with its corresponding level. Topographical surveys are quite thorough, and in order to guarantee the precision and degree of information in the reports produced, topographic survey specialists must be involved.
+              <br><br> Using drones’ high-resolution cameras to take 3D models and aerial photos of the survey area and realistic design. Large-scale surveillance, inspection of hard-to-reach areas, and the creation of intricate maps for planning and design are all effectively accomplished with this technology.
+              <br> <br>We utilize DGPS technology to map geographic characteristics and position objects with extreme accuracy. Because it ensures precise position data, this technology is very helpful for large-scale projects like land development, transmission lines, and roadways. 
+                            
+            </p>
+            
+          </div>
+
+          <div class="row extra-spacing">
+            <h4 class="heading">Design of residential building, road and estimation </h4>
+            <p class="styled-text">
+             We supply structural and architectural design services for residential structures, such as multi-story, single-family, and master plan design model for public spaces. Space planning, structural calculations, material requirements, and guaranteeing adherence to regional building rules are among the services offered.
+              <br><br>Designing roads and highways using topographic surveys, environmental evaluations, and traffic studies as a basis. In order to provide effective and secure transportation routes, this comprises drainage systems, pavement design, geometric design, and safety elements.
+             <br><br> We provide cost analyses based on meticulous specifications and design drawings as it provides a detailed budget prediction by including the amounts of workers, materials, equipment, and other resources required for construction. creating a thorough bill of materials (BoQ) that includes an inventory of all the supplies, parts, and labor needed for the project, together with an estimate of how much of each. Accurate pricing and contractor bidding are based on this.               
+            </p>
+            
+          </div>
+
+          <div class="row extra-spacing">
+            <h4 class="heading">Interior design  </h4>
+            <p class="styled-text">
+              We make arrangements that optimize flow and functionality by measuring the available space. Through these services, clients can be guaranteed a unified design that is not only aesthetically pleasing but also practical and customized to meet their unique requirements. Interior spaces are transformed seamlessly since the consulting organization offers direction at every stage of the process, from concept development to finishing touches.
+            </p>
+            
+          </div>
+
+          <div class="row extra-spacing">
+            <h4 class="heading">Property Valuation </h4>
+            <p class="styled-text">
+               We evaluate the land, building, and other real estate assets' market worth for a variety of uses, including investing, lending, buying, selling, and taxation. Analyzing market trends, property condition, location, and legal papers are all part of this process. Providing complete reports on valuation that conform to local guidelines and regulations, providing information on the property's fair market worth for business dealings and options for investment.
+            </p>
+            
+          </div>
+
+          <div class="row extra-spacing">
+            <h4 class="heading">IEE and EIA  </h4>
+            <p class="styled-text">
+              In order to provide an early indication of the environmental issues and necessary mitigation measures, this is vital for projects like building, road development, and energy infrastructure. Identifying potential environmental effects of a project in its early phases is done by conducting an initial environmental examination, or IEE. Projects that could have a substantial influence on the environment should undergo an environmental impact assessment (EIA). A thorough analysis of the possible impacts on soil, water, air, biodiversity, and communities is required. Making educated decisions about project approval and putting plans in place to reduce adverse effects are made easier by the EIA process.
+            </p>
+            
+          </div>
+
+          <div class="row extra-spacing">
+            <h4 class="heading">Training on civil engineering softwares </h4>
+            <p class="styled-text">
+              We give professionals the tools they need to succeed in the cutthroat market of today by offering thorough training on every type of civil engineering software. We make sure participants become proficient in design, analysis, and modeling with our expert instructors who have extensive industry knowledge. This helps them attain precision in their projects and improve workflows. In order to improve the professional development and career prospects of engineers, architects, and students, we aim to equip them with the technical know-how needed to effectively plan, design, and manage complex civil engineering projects.
+            </p>
+            
+          </div>
+
+
+        
+        </div>
+
+      `;
+      contentArea.classList.remove('with-carousel');
+  });
+
+
+
+//Event listener for "about us link"
+
+document.getElementById('about us').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+          <div class="container-fluid" style="margin-top:30px">
+              <div class="row"> 
+                <div class="col-lg-12">
+                  
+                    <h2 class="heading">About Us</h2>
+                      <p class="styled-text"> 
+                        WorkDesk, a preeminent engineering company dedicated to provide cutting-edge solutions to shape the future. We specialize in offering complete services across a number of civil engineering disciplines, including structural design, site development, transportation engineering, and surveying. We have experience of almost a decade and a team of highly trained engineers working for us. We understand that every project presents its own set of unique obstacles, so we are dedicated in customizing our solutions to match the demands and objective accordingly.
+                        <br><br>Our knowledge covers a broad spectrum of civil engineering specialties, guaranteeing that each project is handled with accuracy, creativity, and a dedication to quality. Our team is prepared to oversee projects from conception to completion with an emphasis on quality, safety, and cost-effectiveness. This includes everything from preliminary feasibility studies to comprehensive design, project management, and construction assistance. 
+                        <br><br>We constantly adapt and develop because we are passionate about engineering quality, which keeps us at the forefront of the sector. One project at a time, let us be your dependable partner in creating the future. Please get in touch with us to discuss how we can help you with your next project.
+                                                
+                      </p>
+                 
+                </div>
+              </div>
+             
+              <div class="row extra-spacing">
+                <div class="col-md-12">
+                  <div class = "row">
+                    <h2 class="heading">Scope of Our Work</h3>
+                      <ul class="styled-text">
+                          <li>Project Planning and Computation</li>
+                          <li>Valuation</li>
+                          <li>Project Management, Control and Monitoring</li>
+                          <li>Survey, Design and Estimation</li>
+                          <li>Interior Design</li>
+                          <li>Supervision and consulting Services </li>
+                          <li>Training of different civil engineering software</li>
+
+                      </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+                
+      `;
+      contentArea.classList.remove('with-carousel');
+  });
+
+
+//Event listener for "team members link"
+
+document.getElementById('team').addEventListener('click', function(event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
+          <div class="container-fluid" style="margin-top:30px">
+              
+              <div class="row">
+                  <div class="col-lg-12 text-center">
+                      <h3 class="heading">Meet Our Team</h3>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4 text-center">
+                      <img src="images/shristi.png" class="rounded-circle" alt="Team Member 1" style="width:150px;">
+                      <h4>Shristi Bijukchhe</h4>
+                      <p>Director</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                      <img src="images/sujan.png" class="rounded-circle" alt="Team Member 2" style="width:150px;">
+                      <h4>Sujan Shakya</h4>
+                      <p>Managing Director</p>
+                  </div>
+                 
+                 <div class="col-md-4 text-center">
+                      <img src="images/rabi.png" class="rounded-circle" alt="Team Member 3" style="width:150px;">
+                      <h4>Rabi Ratna Tuladhar</h4>
+                      <p>Senior Highway Engineer</p>
+                 </div>
+
+                 <div class="col-md-4 text-center">
+                      <img src="images/om.png" class="rounded-circle" alt="Team Member 4" style="width:150px;">
+                      <h4>Om Prakash Prajapati</h4>
+                      <p>Design and Valuation Engineer</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/nophoto.png" class="rounded-circle" alt="Team Member 5" style="width:150px;">
+                      <h4>Dipika Thakulawat</h4>
+                      <p>Senior Architect and Interior</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/yash.png" class="rounded-circle" alt="Team Member 6" style="width:150px;">
+                      <h4>Yash Munankarmy</h4>
+                      <p>Architect and Interior</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/bibek.png" class="rounded-circle" alt="Team Member 7" style="width:150px;">
+                      <h4>Bibek Upreti</h4>
+                      <p>Civil Engineer</p>
+                 </div><div class="col-md-4 text-center">
+                      <img src="images/biswas.png" class="rounded-circle" alt="Team Member 8" style="width:150px;">
+                      <h4>Biswash Upreti </h4>
+                      <p>Geotechnical Engineer</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/srijan.png" class="rounded-circle" alt="Team Member 9" style="width:150px;">
+                      <h4>Srijan Bajracharya</h4>
+                      <p>Civil Engineer</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/shreeya.png" class="rounded-circle" alt="Team Member 10" style="width:150px;">
+                      <h4>Shreeya Shrestha</h4>
+                      <p>Civil Engineer</p>
+                 </div><div class="col-md-4 text-center">
+                      <img src="images/gita.png" class="rounded-circle" alt="Team Member 11" style="width:150px;">
+                      <h4>Gita Kusi</h4>
+                      <p>Environmentalist / IEE Expert</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/nophoto.png" class="rounded-circle" alt="Team Member 12" style="width:150px;">
+                      <h4>Sunita Koju</h4>
+                      <p>Electrical Engineer</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                      <img src="images/anju.jpg" class="rounded-circle" alt="Team Member 13" style="width:150px;">
+                      <h4>Anju Suwal</h4>
+                      <p>Accountant / Office Manager</p>
+                 </div>
+          </div>
+    </div>
+                
+      `;
+      contentArea.classList.remove('with-carousel');
+  });
+
+
+
+
+
+//Event listener for "contact us link"
+
+document.getElementById('contact us').addEventListener('click', function(event) {
+    // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+    var contentArea = document.getElementById('content-area');
+    document.getElementById('content-area').innerHTML = `
+        <div class="container-fluid" style="margin-top:30px; min-height: 60vh;">
+            <div class="row">
+                <div class="col-lg-4 styled-text">
+                    <h2 class="heading">Contact Us</h2>
+                      <p class="styled-text"><strong>Phone:</strong> +977-9849126195, +977-9843502955<br>
+                        <strong>Email:</strong> info.wdesk@gmail.com</p>
+                </div>
+                <div class="col-lg-8 styled-text">
+                    <h2 class="heading">Our Location</h2>
+                       <section id="contact-info" class="mb-4">
+           
+                          <p class="styled-text"><strong>Address:</strong> Prayag Pokhari, Lalitpur</p>
+                          
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.597577130321!2d85.32358331019418!3d27.667919727131594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19253915997d%3A0x75dc461de5e77e43!2sWork%20Desk%20Pvt.%20Ltd!5e0!3m2!1sne!2snp!4v1728863874498!5m2!1sne!2snp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+                        </section>
+
+                </div>
+
+        </div>
+        </div>
+    `;
+    contentArea.classList.remove('with-carousel');
+
+    
+});
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
