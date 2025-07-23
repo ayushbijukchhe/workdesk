@@ -33,6 +33,11 @@
         flex-direction: row; /* Align carousel items horizontally */
         /* overflow: hidden; Ensure content doesn’t overflow on small screens */
       }
+      #carouselExampleIndicators {
+        background-color: #d2caca; /* Light gray, change as needed */
+        border-radius: 12px;       /* Optional: rounded corners */
+        position: relative;
+      }
       
 
 
@@ -98,8 +103,12 @@
      }
 
      .client-logo { /* Or any height you want */
-      width: auto;
-      object-fit: contain;
+     height: 80px;         /* Set a fixed height for all logos */
+      width: 100%;          /* Make logos fill their column width */
+      object-fit: contain;  /* Keep aspect ratio, no stretching */
+      display: block;       /* Remove inline spacing */
+      margin: 0 auto; 
+      
     }
 
     .styled-text{
@@ -278,14 +287,14 @@
         <div class="col-12">
           <h2 class="text-center heading">Our Valuable Clients</h2>
         </div>
-        <div class="col-6 col-md-4">
+        <div class="col-12 col-md-4">
           <img src="images/drms.png" class="img-fluid client-logo" alt="Client 1">
         </div>
-        <div class="col-6 col-md-4">
-          <img src="images/cti1.png" class="img-fluid client-logo" alt="Client 2">
+        <div class="col-12 col-md-4">
+          <img src="images/envidan.png" class="img-fluid client-logo" alt="Client 2">
         </div>
-        <div class="col-6 col-md-4">
-          <img src="images/envidan.png" class="img-fluid client-logo" alt="Client 3">
+        <div class="col-12 col-md-4">
+          <img src="images/cti1.png" class="img-fluid client-logo" alt="Client 3">
         </div>
         
       </div>
