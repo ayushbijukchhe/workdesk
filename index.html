@@ -33,6 +33,7 @@
         flex-direction: row; /* Align carousel items horizontally */
         /* overflow: hidden; Ensure content doesn’t overflow on small screens */
       }
+      
 
 
       /* Set dynamic height for different screen sizes */
@@ -77,10 +78,9 @@
 
       /* Apply consistent sizing to video and images */
       .custom-height {
-        /* object-fit: cover; */
-        width: 100%; /* Take the full width of the container */
-        height: auto; /* Fill the entire container height */
-        /* object-position: center; */
+         width: 100%;
+         height: 100%;
+        object-fit: contain;
       }
 
       .custom-height-image{
@@ -90,12 +90,7 @@
         object-fit: cover; /* Ensure the image covers the container without stretching */
       }
 
-      /* Each carousel item takes full width and height of the carousel */
-      .carousel-item {
-        min-width: 100%; /* Each item takes the full width */
-        height: 100%; /* Ensure items fill the carousel height */
-      }
-
+      
       
     .valuable-clients{
       background-color:ghostwhite; 
@@ -107,17 +102,6 @@
       object-fit: contain;
     }
 
-      /* .client-logo{
-       
-        max-width: 50%; 
-        margin: 10px 0; 
-      } */
-      /* Ensure dropdown (projects) shows on hover */
-    /* .dropdown:hover .dropdown-menu {
-      display: block;
-      border:none;
-      box-shadow: none; 
-    } */
     .styled-text{
       
       margin-bottom: 20px;
@@ -151,9 +135,6 @@
     background-color:  #FFFFFF; 
     filter: brightness(110%); 
 }
-
-
-        
         
 </style>
   
@@ -239,12 +220,12 @@
                 Your browser does not support the video tag.
               </video>
             </div>
-            <!-- <div class="carousel-item">
+            <div class="carousel-item">
               <img src="images/road.jpg" class="custom-height" alt="Image 1">
             </div>
             <div class="carousel-item">
-              <img src="images/design.jpg" class="custom-height" alt="Design Image">
-            </div> -->
+              <img src="images/house_design.png" class="custom-height" alt="Design Image">
+            </div>
         </div>
           
 
@@ -431,10 +412,7 @@ document.getElementById('international-project').addEventListener('click', funct
                 <h2 class="heading">International Projects</h2>
             </div>
           </div>
-          
-         
-            
-
+             
           <div class="row justify-content-center"> 
             <div class="col-lg-6 col-md-12 extra-spacing" style="background-color:#e9f4fb;">
               <div class="card-body">
