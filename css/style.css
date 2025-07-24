@@ -1,0 +1,139 @@
+        a{ 
+            margin-left:20px;
+        } 
+
+        .navbar-nav .nav-item .nav-link, .dropdown-menu .dropdown-item {
+          /* color: #00268b; */
+          color: #002189;
+          /* color: #f29d35; */
+        }
+      
+        /* Add specific rules for the footer social media links */
+        footer .social .navbar-nav .nav-item .nav-link {
+          color: white; 
+        }
+
+        footer .social .navbar-nav .nav-item .nav-link:hover {
+          color: #f29d35; /* Optional: A hover effect for social media icons */
+        }
+      /* Ensure the carousel inner container uses proper sliding */
+      .carousel-inner {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        /* display: flex; Make sure items are in a row, allowing proper sliding */
+        /* flex-direction: row; Align carousel items horizontally */
+        overflow: hidden; 
+      }
+
+      /* Each carousel item takes full width and height of the carousel */
+      .carousel-item {
+        /* min-width: 100%; Each item takes the full width */
+        height: 100%; /* Ensure items fill the carousel height */
+      }
+
+
+
+      /* Set dynamic height for different screen sizes */
+      @media (max-width: 767px) {
+        .carousel-inner {
+          height: 50vh; /* Set height for small screens */
+        }
+
+        #content-area.with-carousel {
+          padding-top: 160px;
+        }
+
+        #content-area {
+          padding-top: 290px; /* Increased padding for screens smaller than 768px */
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1199px) {
+        .carousel-inner {
+          height: 70vh; /* Set height for medium screens */
+        }
+
+        #content-area {
+          padding-top: 290px;
+        }
+
+        #content-area.with-carousel {
+          padding-top: 160px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .carousel-inner {
+          height: 80vh; /* Set height for large screens */
+        }
+
+        #content-area {
+          padding-top: 160px;
+        }
+      }
+
+
+      /* Apply consistent sizing to video and images */
+      .custom-height {
+        width: 100%;
+        height: 100%;  
+        object-fit: contain;      
+        max-height: none; 
+      }
+
+      .custom-height-image{
+        width: 100%; /* Make the image take up the full width of its container */
+        height: auto; /* Maintain the aspect ratio */
+        max-height: 400px; /* Set a maximum height for the images */
+        object-fit: cover; /* Ensure the image covers the container without stretching */
+      }
+
+      
+      
+    .valuable-clients{
+      background-color:ghostwhite; 
+      padding: 20px; 
+     }
+
+     .client-logo { /* Or any height you want */
+      width: auto;
+      object-fit: contain;
+    }
+
+    .styled-text{
+      
+      margin-bottom: 20px;
+      font-family: 'Lato', sans-serif;
+      background-color: #ffffff; /* White background */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      font-size: 1.1rem; /* Slightly larger text */
+      line-height: 2; /* Increase line spacing */
+
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 800px; /* Adjust this width to fit your layout */
+      padding-left: 5px; /* Add left padding */
+      padding-right: 5px; /* Add right padding */
+
+      
+    }
+
+    .extra-spacing {
+    margin-top: 10vh; 
+    margin-left: 5vh;
+    margin-right: 5vh;
+  }
+  .heading{
+    color:#00268b;
+    text-align: center;
+  }
+
+  .custom-navbar {
+    background-color:  #FFFFFF; 
+    filter: brightness(110%); 
+}
+
+
+ 
