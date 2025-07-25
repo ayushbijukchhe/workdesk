@@ -40,46 +40,41 @@
       }
       
 
-
-      /* Set dynamic height for different screen sizes */
       @media (max-width: 767px) {
-        .carousel-inner {
-          height: 50vh; /* Set height for small screens */
-        }
-
-        #content-area.with-carousel {
-          padding-top: 160px;
-        }
-
-        #content-area {
-          padding-top: 290px; /* Increased padding for screens smaller than 768px */
-        }
+      .carousel-inner {
+        height: 50vh;
       }
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        .carousel-inner {
-          height: 70vh; /* Set height for medium screens */
-        }
-
-        #content-area {
-          padding-top: 290px;
-        }
-
-        #content-area.with-carousel {
-          padding-top: 160px;
-        }
+      #content-area.with-carousel {
+        padding-top: 15vh; 
       }
-
-      @media (min-width: 1200px) {
-        .carousel-inner {
-          height: 80vh; /* Set height for large screens */
-        }
-
-        #content-area {
-          padding-top: 160px;
-        }
+      #content-area:not(.with-carousel) {
+        padding-top: 15vh; 
       }
+  }
 
+    @media (min-width: 768px) and (max-width: 1199px) {
+    .carousel-inner {
+      height: 70vh;
+    }
+    #content-area.with-carousel {
+      padding-top: 14vh;
+    }
+    #content-area:not(.with-carousel) {
+      padding-top: 14vh;
+    }
+  }
+  /* for bigger screen */
+  @media (min-width: 1200px) {
+    .carousel-inner {
+      height: 80vh;
+    }
+    #content-area.with-carousel {
+      padding-top: 10vh;
+    }
+    #content-area:not(.with-carousel) {
+      padding-top: 10vh;
+    }
+  }
 
       /* Apply consistent sizing to video and images */
       .custom-height {
@@ -200,11 +195,9 @@
                 <a class="nav-link" href="#" id="contact us">Contact Us</a>
               </li>
             </ul>
-           
-           
+      
           </div>
-
-          
+  
         </div>
         </div>
       </nav>
@@ -249,9 +242,7 @@
     <img src="images/building3.png" class="custom-height" alt="Design Image">
   </div>
   
-</div>
-          
-          
+</div>   
 
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -419,6 +410,17 @@
         document.querySelector('.dropdown').addEventListener('mouseleave', () => {
             document.querySelector('.dropdown-menu').style.display = 'none';
         });
+
+        document.querySelectorAll('.navbar-nav .nav-link, .dropdown-menu .dropdown-item').forEach(function(link) {
+          link.addEventListener('click', function() {
+          var navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            // Collapse the navbar
+            var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+            bsCollapse.hide();
+        }
+        });
+      });
 
   
 //Event listener for "international-project link"
