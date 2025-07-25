@@ -411,16 +411,15 @@
             document.querySelector('.dropdown-menu').style.display = 'none';
         });
 
-        document.querySelectorAll('.navbar-nav .nav-link, .dropdown-menu .dropdown-item').forEach(function(link) {
-          link.addEventListener('click', function() {
+       document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .dropdown-menu .dropdown-item').forEach(function(link) {
+        link.addEventListener('click', function() {
           var navbarCollapse = document.querySelector('.navbar-collapse');
           if (navbarCollapse.classList.contains('show')) {
-            // Collapse the navbar
             var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
             bsCollapse.hide();
-        }
-        });
-      });
+    }
+  });
+});
 
   
 //Event listener for "international-project link"
