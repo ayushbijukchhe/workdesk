@@ -1,294 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>workdesk</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>workdesk</title>
+  <style>
+    a {
+      margin-left: 20px;
+    }
 
-        a{ 
-            margin-left:20px;
-        } 
+    .navbar-nav .nav-item .nav-link,
+    .dropdown-menu .dropdown-item {
+      /* color: #00268b; */
+      color: #002189;
+      /* color: #f29d35; */
+    }
 
-        .navbar-nav .nav-item .nav-link, .dropdown-menu .dropdown-item {
-          /* color: #00268b; */
-          color: #002189;
-          /* color: #f29d35; */
-        }
-      
-        /* Add specific rules for the footer social media links */
-        footer .social .navbar-nav .nav-item .nav-link {
-          color: white; 
-        }
+    /* Add specific rules for the footer social media links */
+    footer .social .navbar-nav .nav-item .nav-link {
+      color: white;
+    }
 
-        footer .social .navbar-nav .nav-item .nav-link:hover {
-          color: #f29d35; /* Optional: A hover effect for social media icons */
-        }
-      /* Ensure the carousel inner container uses proper sliding */
-      .carousel-inner {
-        position: relative;
-        width: 100%;
-        display: flex; /* Make sure items are in a row, allowing proper sliding */
-        flex-direction: row; /* Align carousel items horizontally */
-        /* overflow: hidden; Ensure content doesn’t overflow on small screens */
-      }
-      #carouselExampleIndicators {
-        background-color: #d2caca; /* Light gray, change as needed */
-        border-radius: 12px;       /* Optional: rounded corners */
-        position: relative;
-      }
-      
+    footer .social .navbar-nav .nav-item .nav-link:hover {
+      color: #f29d35;
+      /* Optional: A hover effect for social media icons */
+    }
 
-      @media (max-width: 767px) {
+    /* Ensure the carousel inner container uses proper sliding */
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      display: flex;
+      /* Make sure items are in a row, allowing proper sliding */
+      flex-direction: row;
+      /* Align carousel items horizontally */
+      /* overflow: hidden; Ensure content doesn’t overflow on small screens */
+    }
+
+    #carouselExampleIndicators {
+      background-color: #d2caca;
+      /* Light gray, change as needed */
+      border-radius: 12px;
+      /* Optional: rounded corners */
+      position: relative;
+    }
+
+
+    @media (max-width: 767px) {
       .carousel-inner {
         height: 50vh;
       }
+
       #content-area.with-carousel {
-        padding-top: 15vh; 
+        padding-top: 15vh;
       }
+
       #content-area:not(.with-carousel) {
-        padding-top: 15vh; 
+        padding-top: 15vh;
       }
-  }
+    }
 
     @media (min-width: 768px) and (max-width: 1199px) {
-    .carousel-inner {
-      height: 70vh;
-    }
-    #content-area.with-carousel {
-      padding-top: 14vh;
-    }
-    #content-area:not(.with-carousel) {
-      padding-top: 14vh;
-    }
-  }
-  /* for bigger screen */
-  @media (min-width: 1200px) {
-    .carousel-inner {
-      height: 80vh;
-    }
-    #content-area.with-carousel {
-      padding-top: 10vh;
-    }
-    #content-area:not(.with-carousel) {
-      padding-top: 10vh;
-    }
-  }
-
-      /* Apply consistent sizing to video and images */
-      .custom-height {
-         width: 100%;
-         height: 100%;
-        object-fit: contain;
+      .carousel-inner {
+        height: 70vh;
       }
 
-      .custom-height-image{
-        width: 100%; /* Make the image take up the full width of its container */
-        height: auto; /* Maintain the aspect ratio */
-        max-height: 400px; /* Set a maximum height for the images */
-        object-fit: cover; /* Ensure the image covers the container without stretching */
+      #content-area.with-carousel {
+        padding-top: 14vh;
       }
 
-      
-      
-    .valuable-clients{
-      background-color:ghostwhite; 
-      padding: 20px; 
-     }
-
-     .client-logo { /* Or any height you want */
-     height: 80px;         /* Set a fixed height for all logos */
-      width: 100%;          /* Make logos fill their column width */
-      object-fit: contain;  /* Keep aspect ratio, no stretching */
-      display: block;       /* Remove inline spacing */
-      margin: 0 auto; 
-      
+      #content-area:not(.with-carousel) {
+        padding-top: 14vh;
+      }
     }
 
-    .styled-text{
-      
+    /* for bigger screen */
+    @media (min-width: 1200px) {
+      .carousel-inner {
+        height: 80vh;
+      }
+
+      #content-area.with-carousel {
+        padding-top: 10vh;
+      }
+
+      #content-area:not(.with-carousel) {
+        padding-top: 10vh;
+      }
+    }
+
+    /* Apply consistent sizing to video and images */
+    .custom-height {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .custom-height-image {
+      width: 100%;
+      /* Make the image take up the full width of its container */
+      height: auto;
+      /* Maintain the aspect ratio */
+      max-height: 400px;
+      /* Set a maximum height for the images */
+      object-fit: cover;
+      /* Ensure the image covers the container without stretching */
+    }
+
+    #logo {
+      cursor: pointer;
+    }
+
+
+
+    .valuable-clients {
+      background-color: ghostwhite;
+      padding: 20px;
+    }
+
+    .client-logo {
+      /* Or any height you want */
+      height: 80px;
+      /* Set a fixed height for all logos */
+      width: 100%;
+      /* Make logos fill their column width */
+      object-fit: contain;
+      /* Keep aspect ratio, no stretching */
+      display: block;
+      /* Remove inline spacing */
+      margin: 0 auto;
+
+    }
+
+    .styled-text {
+
       margin-bottom: 20px;
       font-family: 'Lato', sans-serif;
-      background-color: #ffffff; /* White background */
-      border-radius: 8px; /* Rounded corners */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-      font-size: 1.1rem; /* Slightly larger text */
-      line-height: 2; /* Increase line spacing */
+      background-color: #ffffff;
+      /* White background */
+      border-radius: 8px;
+      /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      /* Soft shadow for depth */
+      font-size: 1.1rem;
+      /* Slightly larger text */
+      line-height: 2;
+      /* Increase line spacing */
 
       margin-left: auto;
       margin-right: auto;
-      max-width: 800px; /* Adjust this width to fit your layout */
-      padding-left: 5px; /* Add left padding */
-      padding-right: 5px; /* Add right padding */
+      max-width: 800px;
+      /* Adjust this width to fit your layout */
+      padding-left: 5px;
+      /* Add left padding */
+      padding-right: 5px;
+      /* Add right padding */
 
-      
+
     }
 
     .extra-spacing {
-    margin-top: 10vh; 
-    margin-left: 5vh;
-    margin-right: 5vh;
-  }
-  .heading{
-    color:#00268b;
-    text-align: center;
-  }
+      margin-top: 10vh;
+      margin-left: 5vh;
+      margin-right: 5vh;
+    }
 
-  .custom-navbar {
-    background-color:  #FFFFFF; 
-    filter: brightness(110%); 
-}
-        
-</style>
-  
+    .heading {
+      color: #00268b;
+      text-align: center;
+    }
+
+    .custom-navbar {
+      background-color: #FFFFFF;
+      filter: brightness(110%);
+    }
+  </style>
+
 
 </head>
-<body>
-      
-    <header class="fixed-top">
-        
-      <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
-        <div class="container-fluid">
-           
-          <img src="images/logo.jpeg" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">     
-            
-  
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <!-- div for nav bar and social media icons -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              
-              <!-- <li class="nav-item">
+<body>
+
+  <header class="fixed-top">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+      <div class="container-fluid">
+
+        <img id="logo" src="images/logo.jpeg" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- div for nav bar and social media icons -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
               </li> -->
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Projects
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="projects">
-                  <li><a class="dropdown-item" href="#" id="international-project">International Projects</a></li>
-                  <li><a class="dropdown-item" href="#" id="drone-survey">Drone Survey and 3D Mapping Projects</a></li>
-                  <li><a class="dropdown-item" href="#" id="topographic-survey">Topographic Surveying</a></li>
-                  <li><a class="dropdown-item" href="#" id="building-design">Building Design and Supervision Project</a></li>
-                  <li><a class="dropdown-item" href="#" id="road-design">Road Design and Maintainance Projects</a></li>
-                  <li><a class="dropdown-item" href="#" id="IEE">IEE /EIA Works</a></li>
-                  <li><a class="dropdown-item" href="#" id="valuation">Valuation Experiences</a></li>
 
-                </ul>
-              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="projects" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Projects
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="projects">
+                <li><a class="dropdown-item" href="#" id="international-project">International Projects</a></li>
+                <li><a class="dropdown-item" href="#" id="drone-survey">Drone Survey and 3D Mapping Projects</a></li>
+                <li><a class="dropdown-item" href="#" id="topographic-survey">Topographic Surveying</a></li>
+                <li><a class="dropdown-item" href="#" id="building-design">Building Design and Supervision Project</a>
+                </li>
+                <li><a class="dropdown-item" href="#" id="road-design">Road Design and Maintainance Projects</a></li>
+                <li><a class="dropdown-item" href="#" id="IEE">IEE /EIA Works</a></li>
+                <li><a class="dropdown-item" href="#" id="valuation">Valuation Experiences</a></li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="services">Our Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="team">Team Members</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="about us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="contact us">Contact Us</a>
-              </li>
-            </ul>
-      
-          </div>
-  
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="services">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="team">Team Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="about us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="contact us">Contact Us</a>
+            </li>
+          </ul>
+
         </div>
-        </div>
-      </nav>
-    </header>
-    
 
-   
+      </div>
+      </div>
+    </nav>
+  </header>
+
+
+
   <div id="content-area" class="with-carousel">
 
-          <!-- carousel starts here -->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- carousel starts here -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
 
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 3"></button>
-          </div>
-
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <video class="custom-height" autoplay muted loop>
-      <source src="images/vid3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="carousel-item">
-    <img src="images/road.jpg" class="custom-height" alt="Image 1">
-  </div>
-  <div class="carousel-item">
-    <img src="images/house_design.png" class="custom-height" alt="Design Image">
-  </div>
-  <div class="carousel-item">
-    <img src="images/drone_view1.jpeg" class="custom-height" alt="Design Image">
-  </div>
-  <div class="carousel-item">
-    <img src="images/drone_people.jpeg" class="custom-height" alt="Design Image">
-  </div>
-  <div class="carousel-item">
-    <img src="images/building3.png" class="custom-height" alt="Design Image">
-  </div>
-  
-</div>   
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+          aria-label="Slide 3"></button>
       </div>
-      <!-- carouse ends here -->
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="custom-height" autoplay muted loop>
+            <source src="images/vid3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="carousel-item">
+          <img src="images/road.jpg" class="custom-height" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="images/house_design.png" class="custom-height" alt="Design Image">
+        </div>
+        <div class="carousel-item">
+          <img src="images/drone_view1.jpeg" class="custom-height" alt="Design Image">
+        </div>
+        <div class="carousel-item">
+          <img src="images/drone_people.jpeg" class="custom-height" alt="Design Image">
+        </div>
+        <div class="carousel-item">
+          <img src="images/building3.png" class="custom-height" alt="Design Image">
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- carouse ends here -->
 
     <div class="container-fluid" style="margin-top:30px">
-      
-      <div class="row extra-spacing"> 
+
+      <div class="row extra-spacing">
         <div class="col-lg-12">
           <!-- Welcome Message -->
           <h2 class="text-center heading">Welcome to WorkDesk PVT.LTD.</h2>
-            <p class="styled-text">Work Desk Pvt. Ltd., formerly operating as Geo Tech Consulting
-              Services P. Ltd., is an esteemed engineering firm that was founded on
-              August 1st, 2019, and is based in Lalitpur, Nepal. <br>Our organization
-              excels in providing a wide range of advanced technical solutions and
-              engineering services that are specifically tailored to address the
-              complexities of diverse engineering projects.
-            </p>
+          <p class="styled-text">Work Desk Pvt. Ltd., formerly operating as Geo Tech Consulting
+            Services P. Ltd., is an esteemed engineering firm that was founded on
+            August 1st, 2019, and is based in Lalitpur, Nepal. <br>Our organization
+            excels in providing a wide range of advanced technical solutions and
+            engineering services that are specifically tailored to address the
+            complexities of diverse engineering projects.
+          </p>
         </div>
       </div>
-    
+
       <div class="row extra-spacing">
-        
+
         <div class="col-lg-12">
-          <h2 class="text-center heading"> Services we offer  </h2>
-          <ul class="styled-text"> 
+          <h2 class="text-center heading"> Services we offer </h2>
+          <ul class="styled-text">
             <li> Topographic, Drone and DGPS Survey</li>
             <li>Design of residential building, road and estimation</li>
             <li>Property Valuation</li>
             <li>IEE and EIA</li>
             <li>Training on civil engineering softwares</li>
-            
+
           </ul>
-          
+
         </div>
       </div>
 
 
-    
+
       <div class="row mt-4 valuable-clients">
         <div class="col-12">
           <h2 class="text-center heading">Our Valuable Clients</h2>
@@ -302,129 +350,147 @@
         <div class="col-12 col-md-4">
           <img src="images/cti1.png" class="img-fluid client-logo" alt="Client 3">
         </div>
-        
+
       </div>
     </div>
   </div>
-  
 
-<!-- content ends here -->
 
-<!-- footer starts here -->
-<footer class="container-fluid footer" style="background: #1A1A1A; color: white; padding: 20px 0;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="full_address">
-          <h5>Work Desk PVT. LTD. </h5>
-          <p> Prayag Pokhari, Lalitpur<br>
-          www.workdesk.com.np
-          </p>
+  <!-- content ends here -->
+
+  <!-- footer starts here -->
+  <footer class="container-fluid footer" style="background: #1A1A1A; color: white; padding: 20px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="full_address">
+            <h5>Work Desk PVT. LTD. </h5>
+            <p> Prayag Pokhari, Lalitpur<br>
+              www.workdesk.com.np
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <div class="col-md-4">
-        <div class="contact_info">
-          <h5>Contact Us</h5>
-              <p>Phone: +977-9849126195, +977-9843502955<br>
+
+        <div class="col-md-4">
+          <div class="contact_info">
+            <h5>Contact Us</h5>
+            <p>Phone: +977-9849126195, +977-9843502955<br>
               Email: info.wdesk@gmail.com</p>
+          </div>
         </div>
-    </div>
 
-    <div class ="col-md-4">
-      <div class="social">
+        <div class="col-md-4">
+          <div class="social">
 
-        
-        <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-          <!-- Phone  number -->
-          <li class="nav-item col-4 col-lg-auto">
-            <a class="nav-link py-2 px-0 px-lg-2" href="https://wa.me/9779849126195" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
+
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+              <!-- Phone  number -->
+              <li class="nav-item col-4 col-lg-auto">
+                <a class="nav-link py-2 px-0 px-lg-2" href="https://wa.me/9779849126195" target="_blank" rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg"
+                    viewBox="0 0 448 512" role="img">
                     <title>WhatsApp</title>
-                    <path fill="currentColor" fill-rule="evenodd" 
-                          d="M380.9 97.1C339.2 55.4 283.5 32 224 32 100.3 32 0 132.3 0 256c0 45.6 12 90.1 34.8 129.2L0 480l98.8-33.1C137.9 468 181.9 480 224 480c123.7 0 224-100.3 224-224 0-59.5-23.4-115.2-67.1-158.9zM224 432c-37.5 0-74.1-10.1-106.1-29.2l-7.6-4.5-58.6 19.6 19.6-58.6-4.5-7.6C58.1 298.1 48 261.5 48 224 48 141.6 109.6 80 192 80c37.5 0 74.1 10.1 106.1 29.2l7.6 4.5 58.6-19.6-19.6 58.6 4.5 7.6C389.9 213.9 400 250.5 400 288c0 82.4-61.6 144-144 144zm76.1-97.9c-3.3-1.7-19.4-9.6-22.4-10.7-3-1.1-5.2-1.7-7.4 1.7-2.2 3.3-8.5 10.7-10.4 12.9-1.9 2.2-3.7 2.5-7 0.8-3.3-1.7-13.9-5.1-26.5-16.3-9.8-8.7-16.3-19.4-18.2-22.7-1.9-3.3-0.2-5 1.5-6.7 1.5-1.5 3.3-3.7 4.8-5.6 1.6-1.9 2.2-3.3 3.3-5.6 1.1-2.2 0.6-4.2-0.3-5.9-0.8-1.7-7.4-17.8-10.2-24.6-2.7-6.5-5.5-5.6-7.4-5.7-1.9-0.1-4.1-0.1-6.3-0.1s-5.9 0.8-9 4.2c-3 3.3-11.8 11.5-11.8 28.1 0 16.6 12.1 32.7 13.8 35 1.7 2.2 23.9 36.5 58 51.1 34.1 14.6 34.1 9.7 40.2 9.1 6.2-0.6 19.4-7.9 22.1-15.6 2.7-7.7 2.7-14.3 1.9-15.6-0.8-1.3-3-2.1-6.3-3.8z"></path>
-                </svg>
-                <small class="ms-2">+977-9849126195</small> <!-- WhatsApp Number --> 
-            </a>
-        </li>
+                    <path fill="currentColor" fill-rule="evenodd"
+                      d="M380.9 97.1C339.2 55.4 283.5 32 224 32 100.3 32 0 132.3 0 256c0 45.6 12 90.1 34.8 129.2L0 480l98.8-33.1C137.9 468 181.9 480 224 480c123.7 0 224-100.3 224-224 0-59.5-23.4-115.2-67.1-158.9zM224 432c-37.5 0-74.1-10.1-106.1-29.2l-7.6-4.5-58.6 19.6 19.6-58.6-4.5-7.6C58.1 298.1 48 261.5 48 224 48 141.6 109.6 80 192 80c37.5 0 74.1 10.1 106.1 29.2l7.6 4.5 58.6-19.6-19.6 58.6 4.5 7.6C389.9 213.9 400 250.5 400 288c0 82.4-61.6 144-144 144zm76.1-97.9c-3.3-1.7-19.4-9.6-22.4-10.7-3-1.1-5.2-1.7-7.4 1.7-2.2 3.3-8.5 10.7-10.4 12.9-1.9 2.2-3.7 2.5-7 0.8-3.3-1.7-13.9-5.1-26.5-16.3-9.8-8.7-16.3-19.4-18.2-22.7-1.9-3.3-0.2-5 1.5-6.7 1.5-1.5 3.3-3.7 4.8-5.6 1.6-1.9 2.2-3.3 3.3-5.6 1.1-2.2 0.6-4.2-0.3-5.9-0.8-1.7-7.4-17.8-10.2-24.6-2.7-6.5-5.5-5.6-7.4-5.7-1.9-0.1-4.1-0.1-6.3-0.1s-5.9 0.8-9 4.2c-3 3.3-11.8 11.5-11.8 28.1 0 16.6 12.1 32.7 13.8 35 1.7 2.2 23.9 36.5 58 51.1 34.1 14.6 34.1 9.7 40.2 9.1 6.2-0.6 19.4-7.9 22.1-15.6 2.7-7.7 2.7-14.3 1.9-15.6-0.8-1.3-3-2.1-6.3-3.8z">
+                    </path>
+                  </svg>
+                  <small class="ms-2">+977-9849126195</small> <!-- WhatsApp Number -->
+                </a>
+              </li>
 
 
-        <!-- Instagram  -->
-        <li class="nav-item col-4 col-lg-auto">
-          <a class="nav-link py-2 px-0 px-lg-2" href="https://www.instagram.com/workdesk.com.np/" target="_blank" rel="noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
-                  <title>Instagram</title>
-                  <path fill="currentColor" fill-rule="evenodd" 
-                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-              </svg>
-              <small class="d-lg-none ms-2">Instagram</small>
-          </a>
-        </li>
+              <!-- Instagram  -->
+              <li class="nav-item col-4 col-lg-auto">
+                <a class="nav-link py-2 px-0 px-lg-2" href="https://www.instagram.com/workdesk.com.np/" target="_blank"
+                  rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg"
+                    viewBox="0 0 448 512" role="img">
+                    <title>Instagram</title>
+                    <path fill="currentColor" fill-rule="evenodd"
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                    </path>
+                  </svg>
+                  <small class="d-lg-none ms-2">Instagram</small>
+                </a>
+              </li>
 
-          <!-- Facebook  -->
-        <li class="nav-item col-4 col-lg-auto">
-          <a class="nav-link py-2 px-0 px-lg-2" href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg" viewBox="0 0 448 512" role="img">
-                  <title>Facebook</title>
-                  <path fill="currentColor" fill-rule="evenodd" 
-                        d="M448 56.7v398.5c0 31.3-25.4 56.7-56.7 56.7H56.7C25.4 512 0 486.6 0 455.3V56.7C0 25.4 25.4 0 56.7 0h334.6C422.6 0 448 25.4 448 56.7zM224 448V272h-64v-64h64v-48c0-53 32-82 79-82 22.5 0 41.8 1.7 47.4 2.5v55h-32.5c-25.5 0-30.5 12.1-30.5 29.9v39.1h61l-8 64h-53v176h-64z"></path>
-              </svg>
-              <small class="d-lg-none ms-2">Facebook</small>
-          </a>
-        </li>
-      </ul>
+              <!-- Facebook  -->
+              <li class="nav-item col-4 col-lg-auto">
+                <a class="nav-link py-2 px-0 px-lg-2" href="https://www.facebook.com/YOUR_PAGE" target="_blank"
+                  rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="navbar-nav-svg"
+                    viewBox="0 0 448 512" role="img">
+                    <title>Facebook</title>
+                    <path fill="currentColor" fill-rule="evenodd"
+                      d="M448 56.7v398.5c0 31.3-25.4 56.7-56.7 56.7H56.7C25.4 512 0 486.6 0 455.3V56.7C0 25.4 25.4 0 56.7 0h334.6C422.6 0 448 25.4 448 56.7zM224 448V272h-64v-64h64v-48c0-53 32-82 79-82 22.5 0 41.8 1.7 47.4 2.5v55h-32.5c-25.5 0-30.5 12.1-30.5 29.9v39.1h61l-8 64h-53v176h-64z">
+                    </path>
+                  </svg>
+                  <small class="d-lg-none ms-2">Facebook</small>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+
 
       </div>
+  </footer>
+  <!-- footer ends here -->
 
-    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 
-
-              
-  </div>
-</footer>
-<!-- footer ends here -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>  
-<!-- Bootstrap CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap JS (for carousel functionality) -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (for carousel functionality) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 
-<!-- on the basis of the link clicked by the user, the content on the div content area will be changed -->
-<script>
+  <!-- on the basis of the link clicked by the user, the content on the div content area will be changed -->
+  <script>
 
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelector('.dropdown-menu').style.display = 'none';
-            });
-        });
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelector('.dropdown-menu').style.display = 'none';
+      });
+    });
 
-        document.querySelector('.dropdown').addEventListener('mouseover', () => {
-            document.querySelector('.dropdown-menu').style.display = 'block';
-        });
 
-        document.querySelector('.dropdown').addEventListener('mouseleave', () => {
-            document.querySelector('.dropdown-menu').style.display = 'none';
-        });
+    // Logo click handler
+    document.getElementById('logo').addEventListener('click', () => {
+      location.reload(); // reloads the page to show default content-area
+    });
 
-       document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .dropdown-menu .dropdown-item').forEach(function(link) {
-        link.addEventListener('click', function() {
-          var navbarCollapse = document.querySelector('.navbar-collapse');
-          if (navbarCollapse.classList.contains('show')) {
-            var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
-            bsCollapse.hide();
-    }
-  });
-});
+    document.querySelector('.dropdown').addEventListener('mouseover', () => {
+      document.querySelector('.dropdown-menu').style.display = 'block';
+    });
 
-  
-//Event listener for "international-project link"
+    document.querySelector('.dropdown').addEventListener('mouseleave', () => {
+      document.querySelector('.dropdown-menu').style.display = 'none';
+    });
 
-document.getElementById('international-project').addEventListener('click', function(event) {
+    document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .dropdown-menu .dropdown-item').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          var bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+          bsCollapse.hide();
+        }
+      });
+    });
+
+
+    //Event listener for "international-project link"
+
+    document.getElementById('international-project').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
 
@@ -479,13 +545,13 @@ document.getElementById('international-project').addEventListener('click', funct
       `;
       contentArea.classList.remove('with-carousel');
 
-  });
+    });
 
-  
 
-//Event listener for "drone-survey link"
 
-document.getElementById('drone-survey').addEventListener('click', function(event) {
+    //Event listener for "drone-survey link"
+
+    document.getElementById('drone-survey').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
 
@@ -610,11 +676,11 @@ document.getElementById('drone-survey').addEventListener('click', function(event
       `;
       contentArea.classList.remove('with-carousel');
 
-  });
+    });
 
-  //Event listener for "topographic-survey link"
+    //Event listener for "topographic-survey link"
 
-document.getElementById('topographic-survey').addEventListener('click', function(event) {
+    document.getElementById('topographic-survey').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
 
@@ -667,12 +733,12 @@ document.getElementById('topographic-survey').addEventListener('click', function
       `;
       contentArea.classList.remove('with-carousel');
 
-  });
+    });
 
 
-  //Event listener for " road-design link"
+    //Event listener for " road-design link"
 
-document.getElementById('road-design').addEventListener('click', function(event) {
+    document.getElementById('road-design').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
 
@@ -701,13 +767,13 @@ document.getElementById('road-design').addEventListener('click', function(event)
               
       <div>
   `;
-   contentArea.classList.remove('with-carousel');
+      contentArea.classList.remove('with-carousel');
 
-  });
+    });
 
 
-  //Event listener for "valuation link"
-  document.getElementById('valuation').addEventListener('click', function(event) {
+    //Event listener for "valuation link"
+    document.getElementById('valuation').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -733,14 +799,14 @@ document.getElementById('road-design').addEventListener('click', function(event)
       
       `;
       contentArea.classList.remove('with-carousel');
-  });
+    });
 
 
 
 
-  //Event listener for "building-design link"
+    //Event listener for "building-design link"
 
-  document.getElementById('building-design').addEventListener('click', function(event) {
+    document.getElementById('building-design').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -782,12 +848,12 @@ document.getElementById('road-design').addEventListener('click', function(event)
 
       `;
       contentArea.classList.remove('with-carousel');
-  });
+    });
 
 
-//Event listener for "IEE link"
+    //Event listener for "IEE link"
 
-document.getElementById('IEE').addEventListener('click', function(event) {
+    document.getElementById('IEE').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -821,11 +887,11 @@ document.getElementById('IEE').addEventListener('click', function(event) {
       `;
       contentArea.classList.remove('with-carousel');
 
-  });
-  
-//Event listener for "services link"
+    });
 
-  document.getElementById('services').addEventListener('click', function(event) {
+    //Event listener for "services link"
+
+    document.getElementById('services').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -894,13 +960,13 @@ document.getElementById('IEE').addEventListener('click', function(event) {
 
       `;
       contentArea.classList.remove('with-carousel');
-  });
+    });
 
 
 
-//Event listener for "about us link"
+    //Event listener for "about us link"
 
-document.getElementById('about us').addEventListener('click', function(event) {
+    document.getElementById('about us').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -941,12 +1007,12 @@ document.getElementById('about us').addEventListener('click', function(event) {
                 
       `;
       contentArea.classList.remove('with-carousel');
-  });
+    });
 
 
-//Event listener for "team members link"
+    //Event listener for "team members link"
 
-document.getElementById('team').addEventListener('click', function(event) {
+    document.getElementById('team').addEventListener('click', function (event) {
       // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
       var contentArea = document.getElementById('content-area');
       document.getElementById('content-area').innerHTML = `
@@ -1024,18 +1090,18 @@ document.getElementById('team').addEventListener('click', function(event) {
                 
       `;
       contentArea.classList.remove('with-carousel');
-  });
+    });
 
 
 
 
 
-//Event listener for "contact us link"
+    //Event listener for "contact us link"
 
-document.getElementById('contact us').addEventListener('click', function(event) {
-    // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
-    var contentArea = document.getElementById('content-area');
-    document.getElementById('content-area').innerHTML = `
+    document.getElementById('contact us').addEventListener('click', function (event) {
+      // event.preventDefault(); // Prevent the default behavior of the link (i.e., jumping to the top of the page)
+      var contentArea = document.getElementById('content-area');
+      document.getElementById('content-area').innerHTML = `
         <div class="container-fluid" style="margin-top:30px; min-height: 60vh;">
             <div class="row">
                 <div class="col-lg-4 styled-text">
@@ -1059,17 +1125,18 @@ document.getElementById('contact us').addEventListener('click', function(event) 
         </div>
         </div>
     `;
-    contentArea.classList.remove('with-carousel');
-
-    
-});
+      contentArea.classList.remove('with-carousel');
 
 
+    });
 
 
-</script>
 
 
-    
+  </script>
+
+
+
 </body>
+
 </html>
